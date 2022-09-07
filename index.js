@@ -4,6 +4,8 @@
 
 import dotenv from "dotenv";
 
+// by default dotenv will look for .env
+
 console.log(process.env.MODE);
 
 const mode = process.env.MODE;
