@@ -4,6 +4,27 @@
 
 import dotenv from "dotenv";
 
-dotenv.config();
+console.log(process.env.MODE);
+
+const mode = process.env.MODE;
+
+switch (mode) {
+  case "PRODUCTION":
+    dotenv.config({
+      path: ".env.production",
+    });
+    break;
+  case "TEST":
+    dotenv.config({
+      path: ".env.test",
+    });
+    break;
+  default:
+  case "DEVELOPMENT":
+    dotenv.config({
+      path: ".env.development",
+    });
+    break;
+}
 
 console.log(process.env.SECRET_API_KEY, process.env.URL);
